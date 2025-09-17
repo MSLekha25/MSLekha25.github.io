@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mucharla Sreelekha — Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Tailwind config (optional custom colors)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc',
+                            400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca',
+                            800: '#3730a3', 900: '#312e81'
+                        },
+                        accent: {
+                            50: '#ecfeff', 100: '#cffafe', 200: '#a5f3fc', 300: '#67e8f9',
+                            400: '#22d3ee', 500: '#06b6d4', 600: '#0891b2', 700: '#0e7490',
+                            800: '#155e75', 900: '#164e63'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Simple keyframe for subtle float-in */
+        @keyframes floatIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-floatIn {
+            animation: floatIn .6s ease-out both;
+        }
+        /* Scroll-to-top button fade */
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.3s;
+        }
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
+    <!-- Header / Navbar -->
+    <header
+        class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-slate-900/60 border-b border-slate-200/60 dark:border-slate-800 shadow-md transition-shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#home" class="font-semibold tracking-tight text-primary-700 dark:text-primary-300">Mucharla
+                    Sreelekha</a>
+                <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+                    <a href="#about" class="hover:text-primary-600 dark:hover:text-primary-300 nav-link">About</a>
+                    <a href="#skills" class="hover:text-primary-600 dark:hover:text-primary-300 nav-link">Skills</a>
+                    <a href="#experience" class="hover:text-primary-600 dark:hover:text-primary-300 nav-link">Experience</a>
+                    <a href="#projects" class="hover:text-primary-600 dark:hover:text-primary-300 nav-link">Projects</a>
+                    <a href="#community" class="hover:text-primary-600 dark:hover:text-primary-300 nav-link">Community</a>
+                    <a href="#contact" class="hover:text-primary-600 dark:hover:text-primary-300 nav-link">Contact</a>
+                </nav>
+                <div class="flex items-center gap-2">
+                    <a href="./Mucharla_Sreelekha.pdf" download
+                        class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 px-3 py-1.5 text-sm hover:border-primary-500 hover:text-primary-600 dark:hover:text-primary-300 transition">
+                        <span>Resume</span>
+                    </a>
+                    <button id="themeToggle" title="Toggle theme"
+                        class="inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 p-2 hover:border-primary-500 transition"
+                        aria-label="Toggle dark mode">
+                        <!-- Sun / Moon (simple SVG) -->
+                        <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden dark:block"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path
+                                d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364 6.364-1.414-1.414M7.05 7.05 5.636 5.636m12.728 0-1.414 1.414M7.05 16.95l-1.414 1.414" />
+                            <circle cx="12" cy="12" r="4" />
+                        </svg>
+                        <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 dark:hidden"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="relative overflow-hidden">
+    <!-- Decorative background shapes -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-primary-100 dark:bg-primary-900 rounded-full blur-3xl opacity-40 z-0"></div>
+    <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-accent-100 dark:bg-accent-900 rounded-full blur-3xl opacity-40 z-0"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-accent-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div class="animate-floatIn">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight drop-shadow-lg">Building smarter solutions
+                        with <span class="text-primary-600 dark:text-primary-400">Python</span>, <span
+                            class="text-primary-600 dark:text-primary-400">Django</span> & <span
+                            class="text-primary-600 dark:text-primary-400">Azure</span>.</h1>
+                    <p class="mt-4 text-slate-600 dark:text-slate-300 max-w-2xl transition-colors duration-300">Full‑stack developer passionate about
+                        shipping clean, useful web apps. Community organizer at Microsoft AI Innovators Hub & Cyber
+                        Club.</p>
+                    <div class="mt-6 flex flex-wrap items-center gap-3">
+                        <a href="#projects"
+                            class="inline-flex items-center justify-center rounded-xl bg-primary-600 text-white px-4 py-2.5 text-sm font-semibold shadow-lg hover:bg-primary-700 hover:scale-105 active:scale-95 transition-all duration-200">View
+                            Projects</a>
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-700 px-4 py-2.5 text-sm font-semibold shadow hover:border-primary-500 hover:scale-105 active:scale-95 transition-all duration-200">Hire
+                            Me</a>
+                        <a href="https://www.linkedin.com/in/mucharla-sreelekha" target="_blank"
+                            class="inline-flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-700 px-4 py-2.5 text-sm font-semibold shadow hover:border-primary-500 hover:scale-105 active:scale-95 transition-all duration-200">LinkedIn</a>
+                        <a href="https://github.com/" target="_blank"
+                            class="inline-flex items-center justify-center rounded-xl border border-slate-300 dark:border-slate-700 px-4 py-2.5 text-sm font-semibold shadow hover:border-primary-500 hover:scale-105 active:scale-95 transition-all duration-200">GitHub</a>
+                    </div>
+                </div>
+                <div class="md:justify-self-end animate-floatIn md:delay-150">
+                    <!-- Profile image only -->
+                    <img src="Mucharla Sreelekha.jpg" alt="Mucharla Sreelekha Photo" class="rounded-3xl shadow-2xl w-80 h-80 object-cover md:ml-[-80px] ml-0" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-16">
+    <!-- Section Divider -->
+    <div class="flex items-center justify-center py-2">
+        <div class="w-2 h-2 rounded-full bg-primary-400 dark:bg-primary-600 animate-pulse"></div>
+        <div class="mx-2 h-0.5 w-32 bg-gradient-to-r from-primary-300 via-accent-200 to-primary-300 dark:from-primary-700 dark:via-accent-900 dark:to-primary-700"></div>
+        <div class="w-2 h-2 rounded-full bg-accent-400 dark:bg-accent-600 animate-pulse"></div>
+    </div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-center text-center">
+            <h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-accent-500 to-primary-700 mb-4 drop-shadow-lg">About Me</h2>
+            <blockquote class="text-xl italic text-accent-200 dark:text-accent-300 bg-white/10 dark:bg-slate-900/30 rounded-xl px-6 py-4 mb-6 shadow-lg backdrop-blur border-l-4 border-primary-400">“Turning ideas into shipped products and empowering communities.”</blockquote>
+            <p class="mb-10 text-lg text-slate-300 dark:text-slate-200 max-w-2xl">I’m a full‑stack developer who loves working across the stack with <span class="font-semibold text-primary-400">Python</span>, <span class="font-semibold text-primary-400">Django</span>, <span class="font-semibold text-primary-400">React</span>, and <span class="font-semibold text-primary-400">Azure</span>. Active in the Hyderabad AI community, I thrive on collaboration and continuous learning.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-8 mt-2">
+            <div class="rounded-3xl bg-gradient-to-br from-primary-900/60 via-primary-700/40 to-accent-900/60 p-6 shadow-2xl border border-primary-500/30 backdrop-blur-lg">
+                <h3 class="font-bold text-primary-200 text-lg flex items-center gap-2 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 21h4a2 2 0 002-2V7a2 2 0 00-2-2H8a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    What I’m great at
+                </h3>
+                <ul class="mt-3 space-y-2 text-base text-slate-200 list-disc list-inside">
+                    <li>Designing and building secure, scalable web apps</li>
+                    <li>Collaborating via Git/GitHub and clean PRs</li>
+                    <li>Deploying to Azure with CI/CD basics</li>
+                </ul>
+            </div>
+            <div class="rounded-3xl bg-gradient-to-br from-accent-900/60 via-accent-700/40 to-primary-900/60 p-6 shadow-2xl border border-accent-500/30 backdrop-blur-lg">
+                <h3 class="font-bold text-accent-200 text-lg flex items-center gap-2 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 21h4a2 2 0 002-2V7a2 2 0 00-2-2H8a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    Currently exploring
+                </h3>
+                <ul class="mt-3 space-y-2 text-base text-slate-200 list-disc list-inside">
+                    <li>AI‑assisted dev tooling & RAG patterns</li>
+                    <li>Design systems with Tailwind + Radix</li>
+                    <li>Better DX with Docker & FastAPI</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-16 bg-slate-50 dark:bg-slate-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-accent-500 to-primary-700 mb-4 drop-shadow-lg text-center">Skills</h2>
+            <p class="mt-2 text-lg text-slate-300 dark:text-slate-200 text-center">My technical and professional skill set.</p>
+
+            <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Programming Languages -->
+                <div class="rounded-3xl bg-gradient-to-br from-primary-900/60 via-primary-700/40 to-accent-900/60 p-6 shadow-2xl border border-primary-500/30 backdrop-blur-lg">
+                    <h3 class="font-bold text-primary-200 text-lg mb-2 flex items-center gap-2">
+                        <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-accent-300' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M16 7a4 4 0 01-8 0'/></svg>
+                        Programming Languages
+                    </h3>
+                    <p class="text-base text-slate-200">Java, Python, JavaScript</p>
+                </div>
+                <!-- Web -->
+                <div class="rounded-3xl bg-gradient-to-br from-accent-900/60 via-accent-700/40 to-primary-900/60 p-6 shadow-2xl border border-accent-500/30 backdrop-blur-lg">
+                    <h3 class="font-bold text-accent-200 text-lg mb-2 flex items-center gap-2">
+                        <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-primary-300' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 10h16M4 14h16M4 18h16'/></svg>
+                        Web
+                    </h3>
+                    <p class="text-base text-slate-200">HTML, CSS, Tailwind, Django, Flask, REST APIs, Spring (basic)</p>
+                </div>
+                <!-- Database -->
+                <div class="rounded-3xl bg-gradient-to-br from-primary-900/60 via-primary-700/40 to-accent-900/60 p-6 shadow-2xl border border-primary-500/30 backdrop-blur-lg">
+                    <h3 class="font-bold text-primary-200 text-lg mb-2 flex items-center gap-2">
+                        <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-accent-300' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 10h16M4 14h16'/></svg>
+                        Database
+                    </h3>
+                    <p class="text-base text-slate-200">SQL, MySQL, MongoDB</p>
+                </div>
+                <!-- Web Services -->
+                <div class="rounded-3xl bg-gradient-to-br from-accent-900/60 via-accent-700/40 to-primary-900/60 p-6 shadow-2xl border border-accent-500/30 backdrop-blur-lg">
+                    <h3 class="font-bold text-accent-200 text-lg mb-2 flex items-center gap-2">
+                        <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-primary-300' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 21h4a2 2 0 002-2V7a2 2 0 00-2-2H8a2 2 0 00-2 2v12a2 2 0 002 2z'/></svg>
+                        Web Services
+                    </h3>
+                    <p class="text-base text-slate-200">RESTful APIs (hands-on), SOAP (basic understanding)</p>
+                </div>
+                <!-- Cloud/Tools -->
+                <div class="rounded-3xl bg-gradient-to-br from-primary-900/60 via-primary-700/40 to-accent-900/60 p-6 shadow-2xl border border-primary-500/30 backdrop-blur-lg">
+                    <h3 class="font-bold text-primary-200 text-lg mb-2 flex items-center gap-2">
+                        <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-accent-300' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z'/></svg>
+                        Cloud / Tools
+                    </h3>
+                    <p class="text-base text-slate-200">Azure, AWS, Git, GitHub, VS Code, Power BI, Copilot Studio</p>
+                </div>
+                <!-- Core CS -->
+                <div class="rounded-3xl bg-gradient-to-br from-accent-900/60 via-accent-700/40 to-primary-900/60 p-6 shadow-2xl border border-accent-500/30 backdrop-blur-lg">
+                    <h3 class="font-bold text-accent-200 text-lg mb-2 flex items-center gap-2">
+                        <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-primary-300' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M16 7a4 4 0 01-8 0'/></svg>
+                        Core CS
+                    </h3>
+                    <p class="text-base text-slate-200">Data Structures & Algorithms, Operating Systems, DBMS</p>
+                </div>
+                <!-- Soft Skills -->
+                <div class="rounded-3xl bg-gradient-to-br from-primary-900/60 via-primary-700/40 to-accent-900/60 p-6 shadow-2xl border border-primary-500/30 backdrop-blur-lg">
+                    <h3 class="font-bold text-primary-200 text-lg mb-2 flex items-center gap-2">
+                        <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-accent-300' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z'/></svg>
+                        Soft Skills
+                    </h3>
+                    <p class="text-base text-slate-200">Communication, Leadership, Problem-Solving</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-16">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-accent-500 to-primary-700 mb-8 drop-shadow-lg text-center">Experience</h2>
+            <div class="mt-10 relative">
+                <div class="absolute left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-400 via-accent-400 to-primary-700 rounded-full"></div>
+                <ol class="space-y-12">
+                    <!-- Experience Card 1 -->
+                    <li class="relative pl-20">
+                        <span class="absolute left-6 top-6 inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-accent-500 text-white text-lg font-bold shadow-lg">1</span>
+                        <div class="rounded-3xl bg-gradient-to-br from-primary-900/60 via-primary-700/40 to-accent-900/60 p-8 shadow-2xl border border-primary-500/30 backdrop-blur-lg">
+                            <div class="flex flex-wrap items-center gap-x-3 mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 01-8 0"/></svg>
+                                <h3 class="font-bold text-primary-200 text-xl">Full‑Stack Developer Intern — Rinav Tech</h3>
+                                <span class="text-xs text-slate-300 ml-auto">Apr 2025 – Jul 2025 · Hyderabad</span>
+                            </div>
+                            <ul class="mt-3 list-disc list-inside text-base text-slate-200 space-y-1">
+                                <li>Automated studio onboarding & media uploads (web‑based workflow).</li>
+                                <li>Built components for registration, login, media management, admin approvals.</li>
+                                <li>Stack: Django, HTML/CSS, JavaScript, MySQL.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- Experience Card 2 -->
+                    <li class="relative pl-20">
+                        <span class="absolute left-6 top-6 inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-accent-500 text-white text-lg font-bold shadow-lg">2</span>
+                        <div class="rounded-3xl bg-gradient-to-br from-accent-900/60 via-accent-700/40 to-primary-900/60 p-8 shadow-2xl border border-accent-500/30 backdrop-blur-lg">
+                            <div class="flex flex-wrap items-center gap-x-3 mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+                                <h3 class="font-bold text-accent-200 text-xl">IT Intern — Mentoria Institute Limited</h3>
+                                <span class="text-xs text-slate-300 ml-auto">Jan 2025 – Apr 2025 · Hyderabad</span>
+                            </div>
+                            <ul class="mt-3 list-disc list-inside text-base text-slate-200 space-y-1">
+                                <li>Built website modules; improved user access efficiency by ~30%.</li>
+                                <li>Implemented secure authentication and smooth UX.</li>
+                                <li>Collaborative delivery within project timelines.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- Experience Card 3 -->
+                    <li class="relative pl-20">
+                        <span class="absolute left-6 top-6 inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-accent-500 text-white text-lg font-bold shadow-lg">3</span>
+                        <div class="rounded-3xl bg-gradient-to-br from-primary-900/60 via-primary-700/40 to-accent-900/60 p-8 shadow-2xl border border-primary-500/30 backdrop-blur-lg">
+                            <div class="flex flex-wrap items-center gap-x-3 mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 01-8 0"/></svg>
+                                <h3 class="font-bold text-primary-200 text-xl">Python Intern (Team Lead) — Infosys Springboard 5.0</h3>
+                                <span class="text-xs text-slate-300 ml-auto">Oct 2025 – Dec 2025 · Hyderabad</span>
+                            </div>
+                            <ul class="mt-3 list-disc list-inside text-base text-slate-200 space-y-1">
+                                <li>Led team of 4 to build weather & AQI monitoring web app.</li>
+                                <li>Implemented forecasts & AQI tracking with Flask + Python.</li>
+                                <li>Improved performance via testing & debugging.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-16 bg-slate-50 dark:bg-slate-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-baseline justify-between gap-4 flex-wrap">
+                <h2 class="text-2xl font-bold">Projects</h2>
+                <div class="text-sm text-slate-500">*Deployed demos & source on GitHub*</div>
+            </div>
+
+            <div class="mt-8 grid md:grid-cols-2 gap-6">
+                <!-- Project Card: MigrateX -->
+                <article class="rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800">
+                    <div
+                        class="aspect-video bg-gradient-to-br from-primary-200/60 to-accent-200/60 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center text-sm">
+                        Add demo GIF/screenshot</div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold">MigrateX — AI Code Migration Assistant</h3>
+                        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">AI‑powered platform to migrate entire
+                            project stacks between frameworks/languages with step‑by‑step guides and unit tests. Built
+                            with React, Django, MySQL, Azure OpenAI.</p>
+                        <ul class="mt-3 text-sm text-slate-700 dark:text-slate-300 list-disc list-inside space-y-1">
+                            <li>Reduced migration time by up to <strong>70%</strong> (target) and improved accuracy by
+                                <strong>90%</strong>.</li>
+                            <li>One‑click workflow, guided diffs, and test generation.</li>
+                        </ul>
+                        <div class="mt-4 flex flex-wrap gap-3">
+                            <a href="#"
+                                class="inline-flex items-center rounded-xl bg-primary-600 text-white px-3 py-1.5 text-sm font-semibold hover:bg-primary-700 transition">Live
+                                Demo</a>
+                            <a href="#"
+                                class="inline-flex items-center rounded-xl border border-slate-300 dark:border-slate-700 px-3 py-1.5 text-sm font-semibold hover:border-primary-500 transition">GitHub</a>
+                            <span
+                                class="inline-flex items-center rounded-xl bg-slate-100 dark:bg-slate-800 px-2.5 py-1 text-xs">React</span>
+                            <span
+                                class="inline-flex items-center rounded-xl bg-slate-100 dark:bg-slate-800 px-2.5 py-1 text-xs">Django</span>
+                            <span
+                                class="inline-flex items-center rounded-xl bg-slate-100 dark:bg-slate-800 px-2.5 py-1 text-xs">Azure
+                                OpenAI</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card: CodeMentor AI -->
+                <article class="rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800">
+                    <div
+                        class="aspect-video bg-gradient-to-br from-primary-200/60 to-accent-200/60 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center text-sm">
+                        Add demo GIF/screenshot</div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold">CodeMentor AI — Multi‑turn Code Assistant</h3>
+                        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Analyzes code snippets, identifies
+                            errors, shows corrected code, and explains fixes in beginner‑friendly language. Supports
+                            auth + chat history.</p>
+                        <ul class="mt-3 text-sm text-slate-700 dark:text-slate-300 list-disc list-inside space-y-1">
+                            <li>Full‑stack app with React, Django (or Flask), MySQL.</li>
+                            <li>Secure auth, session storage, and clean UI.</li>
+                        </ul>
+                        <div class="mt-4 flex flex-wrap gap-3">
+                            <a href="#"
+                                class="inline-flex items-center rounded-xl bg-primary-600 text-white px-3 py-1.5 text-sm font-semibold hover:bg-primary-700 transition">Live
+                                Demo</a>
+                            <a href="#"
+                                class="inline-flex items-center rounded-xl border border-slate-300 dark:border-slate-700 px-3 py-1.5 text-sm font-semibold hover:border-primary-500 transition">GitHub</a>
+                            <span
+                                class="inline-flex items-center rounded-xl bg-slate-100 dark:bg-slate-800 px-2.5 py-1 text-xs">React</span>
+                            <span
+                                class="inline-flex items-center rounded-xl bg-slate-100 dark:bg-slate-800 px-2.5 py-1 text-xs">Django/Flask</span>
+                            <span
+                                class="inline-flex items-center rounded-xl bg-slate-100 dark:bg-slate-800 px-2.5 py-1 text-xs">MySQL</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community & Leadership -->
+    <section id="community" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold">Community & Leadership</h2>
+            <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
+                    <h3 class="font-semibold">Microsoft AI Innovators Hub — Volunteer</h3>
+                    <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Organized and led learning sessions;
+                        contributed to community‑driven AI initiatives.</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
+                    <h3 class="font-semibold">Global AI Hyderabad — Volunteer</h3>
+                    <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Assisted in meetups & knowledge‑sharing
+                        for the Hyderabad AI community.</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
+                    <h3 class="font-semibold">CodeMania 2K25 — Organizer</h3>
+                    <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">End‑to‑end planning & execution of a
+                        6‑hour hackathon; boosted collaboration & creativity.</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
+                    <h3 class="font-semibold">PowerPitch — Organizer</h3>
+                    <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Ran weekly GDs, JAMs, & mock interviews;
+                        led industry outreach for top performers.</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
+                    <h3 class="font-semibold">Cyber Club, SICET — Coordinator</h3>
+                    <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Taught sessions & raised cybersecurity
+                        awareness across campus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 bg-slate-50 dark:bg-slate-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-10 items-start">
+                <div>
+                    <h2 class="text-2xl font-bold">Get in touch</h2>
+                    <p class="mt-2 text-slate-600 dark:text-slate-300">Whether you have a role in mind or just want to
+                        say hi — I’d love to chat.</p>
+                    <div class="mt-6 space-y-3 text-sm">
+                        <p><strong>Email:</strong> <a class="text-primary-600 dark:text-primary-300"
+                                href="mailto:mucharlasreelekha@outlook.com">mucharlasreelekha@outlook.com</a></p>
+                        <p><strong>LinkedIn:</strong> <a class="text-primary-600 dark:text-primary-300" target="_blank"
+                                href="https://www.linkedin.com/in/mucharla-sreelekha">/in/mucharla-sreelekha</a></p>
+                        <p><strong>Location:</strong> Hyderabad, India</p>
+                    </div>
+                </div>
+                <form class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 bg-white dark:bg-slate-950"
+                    action="https://formspree.io/f/your-id" method="POST">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <label class="block text-sm">
+                            <span class="text-slate-600 dark:text-slate-300">Name</span>
+                            <input required name="name" type="text"
+                                class="mt-1 w-full rounded-xl border-slate-300 dark:border-slate-700 dark:bg-slate-900"
+                                placeholder="Your name" />
+                        </label>
+                        <label class="block text-sm">
+                            <span class="text-slate-600 dark:text-slate-300">Email</span>
+                            <input required name="email" type="email"
+                                class="mt-1 w-full rounded-xl border-slate-300 dark:border-slate-700 dark:bg-slate-900"
+                                placeholder="you@example.com" />
+                        </label>
+                    </div>
+                    <label class="block text-sm mt-4">
+                        <span class="text-slate-600 dark:text-slate-300">Message</span>
+                        <textarea required name="message" rows="5"
+                            class="mt-1 w-full rounded-xl border-slate-300 dark:border-slate-700 dark:bg-slate-900"
+                            placeholder="Tell me about the role or project..."></textarea>
+                    </label>
+                    <button type="submit"
+                        class="mt-4 inline-flex items-center rounded-xl bg-primary-600 text-white px-4 py-2.5 text-sm font-semibold shadow hover:bg-primary-700 transition">Send
+                        Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© <span id="year"></span> Mucharla Sreelekha. All rights reserved.</p>
+            <div class="flex items-center gap-4">
+                <a href="./Mucharla_Sreelekha.pdf" download
+                    class="hover:text-primary-600 dark:hover:text-primary-300">Download Resume</a>
+                <a href="#home" class="hover:text-primary-600 dark:hover:text-primary-300">Back to top ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts: theme toggle + year + prefer color scheme -->
+    <script>
+        const html = document.documentElement;
+        const stored = localStorage.getItem('theme');
+        if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        }
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const toggle = document.getElementById('themeToggle');
+        toggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+    </script>
+</body>
+    <!-- Scroll-to-top button -->
+    <button id="scrollTopBtn" title="Back to top" class="fixed bottom-6 right-6 z-50 bg-primary-600 text-white p-3 rounded-full shadow-lg hover:bg-primary-700 hover:scale-110 transition-all fade-out" style="display:none;">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+    <script>
+        // Scroll-to-top button logic
+        const scrollBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'block';
+                scrollBtn.classList.remove('fade-out');
+                scrollBtn.classList.add('fade-in');
+            } else {
+                scrollBtn.classList.remove('fade-in');
+                scrollBtn.classList.add('fade-out');
+                setTimeout(() => { scrollBtn.style.display = 'none'; }, 300);
+            }
+        });
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        // Navbar active link highlight
+        const navLinks = document.querySelectorAll('.nav-link');
+        function setActiveLink() {
+            let fromTop = window.scrollY + 80;
+            navLinks.forEach(link => {
+                const section = document.querySelector(link.getAttribute('href'));
+                if (section && section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+                    link.classList.add('text-primary-700', 'dark:text-primary-300', 'font-bold', 'underline');
+                } else {
+                    link.classList.remove('text-primary-700', 'dark:text-primary-300', 'font-bold', 'underline');
+                }
+            });
+        }
+        window.addEventListener('scroll', setActiveLink);
+        window.addEventListener('DOMContentLoaded', setActiveLink);
+    </script>
+
+</html>
